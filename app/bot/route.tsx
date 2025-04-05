@@ -90,7 +90,10 @@ export async function POST(reqs: Request) {
       
       if(frm !== owner)
       {
-        
+        const msg = `Visit github repo <a href="https://github.com/classic-k/mentioner">here</a> to setup bot as only owner can see list of Group to send notification`
+        await bot.sendMessage(chat.id, msg, {
+          parse_mode: "HTML"
+        })
          return NextResponse.json({message: "sent"})
 
       }
